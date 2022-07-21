@@ -5,8 +5,6 @@ import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.InputStream;
-import java.net.URL;
-
 import javax.imageio.ImageIO;
 
 public class GeradoraDeFigurinhas {
@@ -31,12 +29,12 @@ public class GeradoraDeFigurinhas {
 
         //configurar a fonte
         var fonte = new Font(Font.SANS_SERIF, Font.BOLD, 64);
-        graphics.setColor(Color.YELLOW);
+        graphics.setColor(Color.DARK_GRAY);
         graphics.setFont(fonte);
 
 
         //escrever uma frase na nova imagem
-        graphics.drawString("TOPZERA", 100, novaAltura -100);
+        graphics.drawString("Vale a pena ver de novo! 🎥", 120, novaAltura -100);
 
         //escrever nova imagem em um arquivo
         ImageIO.write(novaImagem, "png", new File(nomeArquivo));
