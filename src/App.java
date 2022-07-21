@@ -1,4 +1,6 @@
+import java.io.InputStream;
 import java.net.URI;
+import java.net.URL;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
@@ -26,12 +28,25 @@ public class App {
 
         // exibir e manipular os dados
         for (Map<String,String> filme : listaDeFilmes) {
-            System.out.println(" 🍿 📽 🎬 🍿");
-            System.out.println(" Nome do filme: " + "\u001b[35m"+"\u001b[3m" + filme.get("title") + "\u001b[0m");
-            System.out.println(" \u001b[34m" + filme.get("image" ) + "\u001b[0m");
+
+            String urlImagem = filme.get("image");
+            String titulo = filme.get("title");
+
+            InputStream inputStream = new URL(urlImagem).openStream();
+            String nomeArquivo = titulo + ".png";
+
+            var geradora = new GeradoraDeFigurinhas();
+            geradora.cria(inputStream, nomeArquivo);
+
+            System.out.println(filme.get("title"));
+            System.out.println();
+
+            //System.out.println(" 🍿 📽 🎬 🍿");
+            //System.out.println(" Nome do filme: " + "\u001b[35m"+"\u001b[3m" + filme.get("title") + "\u001b[0m");
+            //System.out.println(" \u001b[34m" + filme.get("image" ) + "\u001b[0m");
             
 
-            var rating = filme.get("imDbRating");
+            /*var rating = filme.get("imDbRating");
             var nota = Double.parseDouble(rating);
                 if (nota >= 9.0){
                 System.out.println(" " + nota + " ⭐ ⭐ ⭐ ⭐ ⭐");
@@ -44,7 +59,7 @@ public class App {
                 }else{
                     System.out.println(" " + nota + " ⭐");
                 }
-            System.out.println("");
+            System.out.println("");*/
             
         }
     }
