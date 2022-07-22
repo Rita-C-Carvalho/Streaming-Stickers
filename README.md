@@ -44,4 +44,8 @@ O resultado da aula foi esse abaixo:
  
  <img src= "https://images2.imgbox.com/67/c3/XMRQt2Kn_o.png"  align="center" alt="cafe-pic" height="200" styele="border-radius:50%">
  
+ ## Aula 3 - Refatoração e Orientação a Objetos
+ 
+ Nessa aula fizemos as refatorações (separação do código) necessárias para tornar o código mais flexível e mais fácil de entender.
+ 
 </div>
